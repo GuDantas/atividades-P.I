@@ -1,0 +1,25 @@
+.pai {
+    background-color: antiquewhite;
+    width: 800px;
+    height: 30vh;
+    border: solid 2px green;
+    margin: 10px;
+}
+
+.caixa {
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+    border-radius: 50px
+}
+
+.titulo {
+    font-family: monospace;
+    
+}
+
+.texto {
+    color: crimson;
+    font-size: 3vh;
+
+}
