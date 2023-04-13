@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 Chart JS Gustavo E</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<body>
+    <h1 style="margin: auto; font-family:'Times New Roman', Times, serif;">Exercício Chart.JS Gustavo Enrico</h1>
+    <div>
+        <canvas id="lineGraph">
+        </canvas>
+    </div>
+    <br>
+    <div>
+        <canvas id="barGraph"></canvas>
+    </div>
+</body>
+
+</html>
+<script>
+    const ctx = document.getElementById('lineGraph');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            label:'Horário',
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Horário',
+            },
+            {
+                label: 'Temperatura',
+                data: [30, 29, 28, 25, 22, 23]
+            },
+
+            {
+                label: 'Umidade',
+                data: [80, 82, 80, 85, 80, 83]
+            }],
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        }
+    });
+</script>
+<script>
+    const bar = document.getElementById('barGraph')
+    new Chart(bar, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label:'Horário'
+            
+        },    
+        {
+        label: 'Temperatura',
+            data: [22, 24, 27, 23, 20, 18],
+            backgroundColor:'blue'
+        },
+        {
+            label: 'Umidade',
+            data: [90, 89, 93, 87, 88, 82]
+        }]
+        ,
+        // retirei
+        options:{
+            plugins:{
+                legend:{
+                    labels:{
+                        filter: (legendItem, data) => (typeof legendItem.text !== 'undefined')
+                    }
+                }
+            },
+            scales: {
+
+                y: {beginAtZero: true}
+            }
+        }
+    }});
+</script>
